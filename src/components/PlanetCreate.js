@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import { planetCreate } from '../api/planet'
 
 const PlanetCreate = ({user, msgAlert}) => {
@@ -6,7 +6,7 @@ const PlanetCreate = ({user, msgAlert}) => {
         name: '',
         distanceFromSun: '', 
         moons: '',
-        info: '',
+        info: ''
     }
     
     const [planet, setPlanet] = useState(defaultPlanet)

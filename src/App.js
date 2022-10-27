@@ -13,6 +13,9 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import PlanetCreate from './components/PlanetCreate'
+import PlanetIndex from './components/PlanetIndex'
+import PlanetShow from './components/PlanetShow'
+import PlanetUpdate from './components/PlanetUpdate'
 
 const App = () => {
 
@@ -70,10 +73,24 @@ const App = () => {
               </RequireAuth>}
           />
 		  <Route
-            path='/planets'
+            path='/create'
             element={
               <RequireAuth user={user}>
                 <PlanetCreate msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		  <Route
+            path='/planets'
+            element={
+              <RequireAuth user={user}>
+                <PlanetIndex msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
+		  <Route
+            path='/planets/:id'
+            element={
+              <RequireAuth user={user}>
+                <PlanetShow msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
 				</Routes>

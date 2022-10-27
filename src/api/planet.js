@@ -12,4 +12,47 @@ export const planetCreate = (data, user) => {
 			Authorization: `Token token=${user.token}`,
 		},
 	})
+	
+}
+export const planetIndex = (user) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/planets',
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
+
+export const planetShow = (user, id) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/planets/' + id,
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
+
+export const planetUpdate = (data, user, id) => {
+	return axios({
+		method: 'PATCH',
+		url: apiUrl + '/planets/' + id,
+		data: {
+			pet: data,
+		},
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
+
+export const planetDelete = (user, id) => {
+	return axios({
+		method: 'DELETE',
+		url: apiUrl + '/planets/' + id,
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
 }

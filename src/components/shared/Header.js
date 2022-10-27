@@ -23,6 +23,11 @@ const authenticatedOptions = (
 				Create a Planet
 			</Link>
 		</Nav.Item>
+		<Nav.Item>
+			<Link to='planets' style={linkStyle}>
+				 Index all Planets
+			</Link>
+		</Nav.Item>
 	</>
 )
 
