@@ -12,10 +12,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-import PlanetCreate from './components/PlanetCreate'
-import PlanetIndex from './components/PlanetIndex'
-import PlanetShow from './components/PlanetShow'
-import PlanetUpdate from './components/PlanetUpdate'
+import PlanetCreate from './components/planets/PlanetCreate'
+import PlanetIndex from './components/planets/PlanetIndex'
+import PlanetShow from './components/planets/PlanetShow'
 
 const App = () => {
 
@@ -80,19 +79,19 @@ const App = () => {
               </RequireAuth>}
           />
 		  <Route
+            path='/planets/:id'
+            element={
+                <PlanetShow msgAlert={msgAlert} user={user} />
+            }
+          />
+		    <Route
             path='/planets'
             element={
               <RequireAuth user={user}>
                 <PlanetIndex msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
-		  <Route
-            path='/planets/:id'
-            element={
-              <RequireAuth user={user}>
-                <PlanetShow msgAlert={msgAlert} user={user} />
-              </RequireAuth>}
-          />
+
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert

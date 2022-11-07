@@ -18,9 +18,9 @@ export const planetIndex = (user) => {
 	return axios({
 		method: 'GET',
 		url: apiUrl + '/planets',
-		headers: {
-			Authorization: `Token token=${user.token}`,
-		},
+		// headers: {
+		// 	Authorization: `Token token=${user.token}`,
+		// },
 	})
 }
 
@@ -39,7 +39,7 @@ export const planetUpdate = (data, user, id) => {
 		method: 'PATCH',
 		url: apiUrl + '/planets/' + id,
 		data: {
-			pet: data,
+			planet: data,
 		},
 		headers: {
 			Authorization: `Token token=${user.token}`,
